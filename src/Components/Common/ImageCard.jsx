@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import  { useState } from 'react';
 import './image-card.scss'
-import imgHolders from '../../assets/images/noImage.jpg'
+import imgHolders from '../../assets/images/noimage.jpg'
 const ImageCard = ({ name, imgURL }) => {
     const [isLoading, setIsLoading] = useState(true);
     const imageUrl = `https://test.create.diagnal.com/images/${imgURL}`;
