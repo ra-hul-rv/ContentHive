@@ -19,13 +19,13 @@ function App() {
         const data = await getDataEndpoint(`page${page}.json`);
         const content=data?.page?.['content-items']?.content
         if (data && content) {
-          setItems((prevItems) => [...prevItems, ...content]);
+          setItems((prevItems) => [...prevItems, ...content]); // Add and update the content list from api call
           setTitle(data?.page?.title); // Set the title from the API call
         } else {
-          setError('No data found');
+          setError('No data found'); // Set the no data error
         }
       } catch  {
-        setError('Error loading data');
+        setError('Error loading data'); // Set general error
       } finally {
         setIsLoading(false);
       }

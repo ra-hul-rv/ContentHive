@@ -8,16 +8,19 @@ const Home = ({ items, searchTerm, setPage, page, error, isLoading }) => {
   const observer = useRef();
 
   const lastItemRef = (element) => {
-    if (isLoading) return;
-    if (observer.current) observer.current.disconnect();
+    if (isLoading) return; // Return if api call is in progress
+    if (observer.current) observer.current.disconnect(); // Clearing any previous intersection observers if set
+   //Creating a new observer which observe the change in intersection and incrementing the page no for api call
     observer.current = new IntersectionObserver((properties) => {
       if (properties[0].isIntersecting && page < 3) {
         setPage((prevPage) => prevPage + 1);
       }
-    });
+    }); 
+    // Attaching the observer to the target element to observe its state
     if (element) observer.current.observe(element);
   };
 
+  // Searching locally from the list of items
   const filteredItems = items.filter(item =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
