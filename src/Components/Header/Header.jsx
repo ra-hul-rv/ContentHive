@@ -26,6 +26,7 @@ const Header = ({ title, searchTerm, setSearchTerm }) => {
           </IconButton>
         ) : (
           <InputBase
+          autoFocus
             placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
