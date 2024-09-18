@@ -1,16 +1,20 @@
-const baseUrl=import.meta.env.VITE_API_BASE_URL
-const data=import.meta.env.VITE_ENDPOINT_DATA
-export const getDataEndpoint = (build) =>
-    build.query({
-        query: (page) => {
-            console.log(baseUrl, data)
-            return {
-                url:baseUrl+ data + page,
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            };
-        },
-        invalidatesTags: ['data'],
-    });
+import { baseUrl, data } from './config';
+
+export const getDataEndpoint = async (page) => {
+    try {
+        console.log(baseUrl, data);
+        const response = await fetch(`${baseUrl}${data}${page}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
+};
