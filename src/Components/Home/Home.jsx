@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useRef, lazy, Suspense } from 'react';
 import './home.scss';
-import noDataIconLight from '../../assets/Icons/noDataIconLight.svg'
+import noDataIconLight from '../../assets/Icons/noDataIconlight.svg'
 const ImageCard = lazy(() => import('../Common/ImageCard'));
 
 const Home = ({ items, searchTerm, setPage, page, error, isLoading }) => {
