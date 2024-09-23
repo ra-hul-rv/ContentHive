@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { IconButton, InputBase } from '@mui/material';
-import PropTypes from 'prop-types';
+import { useState } from "react";
+import { IconButton, InputBase } from "@mui/material";
+import PropTypes from "prop-types";
 
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import SearchIcon from '@mui/icons-material/Search';
-import './header.scss';
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import SearchIcon from "@mui/icons-material/Search";
+import "./header.scss";
 
 const Header = ({ title, searchTerm, setSearchTerm }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -12,24 +12,24 @@ const Header = ({ title, searchTerm, setSearchTerm }) => {
   const handleSearchClick = () => {
     setIsSearchOpen(!isSearchOpen);
   };
-const handleBackClick = () => {
-  setSearchTerm('')
-  setIsSearchOpen(false)
-}
+  const handleBackClick = () => {
+    setSearchTerm("");
+    setIsSearchOpen(false);
+  };
   return (
     <div className="header">
-      <IconButton onClick={handleBackClick}  className="icon-button">
-        <ArrowBackIcon   />
+      <IconButton onClick={handleBackClick} className="icon-button">
+        <ArrowBackIcon />
       </IconButton>
-      <h1 className="title">{title ?? ''}</h1>
+      <p className="title">{title ?? ""}</p>
       <div className="search-container">
         {!isSearchOpen ? (
-          <IconButton   className="icon-button" onClick={handleSearchClick}>
-            <SearchIcon   />
+          <IconButton className="icon-button" onClick={handleSearchClick}>
+            <SearchIcon />
           </IconButton>
         ) : (
           <InputBase
-          autoFocus
+            autoFocus
             placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -41,9 +41,9 @@ const handleBackClick = () => {
   );
 };
 Header.propTypes = {
-    title: PropTypes.string,
-    searchTerm: PropTypes.string.isRequired,
-    setSearchTerm: PropTypes.func.isRequired,
-  };
-  
+  title: PropTypes.string,
+  searchTerm: PropTypes.string.isRequired,
+  setSearchTerm: PropTypes.func.isRequired,
+};
+
 export default Header;
