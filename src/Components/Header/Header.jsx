@@ -12,10 +12,13 @@ const Header = ({ title, searchTerm, setSearchTerm }) => {
   const handleSearchClick = () => {
     setIsSearchOpen(!isSearchOpen);
   };
-
+const handleBackClick = () => {
+  setSearchTerm('')
+  setIsSearchOpen(false)
+}
   return (
     <div className="header">
-      <IconButton onClick={()=>setIsSearchOpen(false)}  className="icon-button">
+      <IconButton onClick={handleBackClick}  className="icon-button">
         <ArrowBackIcon   />
       </IconButton>
       <h1 className="title">{title ?? ''}</h1>

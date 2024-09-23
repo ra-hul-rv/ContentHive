@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
 
 body {
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   background-color: #171717;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -22,36 +22,28 @@ body {
     width: 100%;
     @media (min-width: 768px) {
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    
-  }
-  
-  @media (max-width: 767px) {
-      grid-template-columns: repeat(3, 1fr);
-    
-  }
-  }
+    }
 
-  .error-message {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 18px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
-    width: 100vw;
-    height: 100vh;
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
-  
-  
 }
+
 /* width */
 ::-webkit-scrollbar {
   width: 0px;
 }
 
-
-  
-
-
+.error-message {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 22px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100vw;
+  height: 100vh;
+}
