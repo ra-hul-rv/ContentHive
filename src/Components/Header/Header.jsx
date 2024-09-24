@@ -19,13 +19,13 @@ const Header = ({ title, searchTerm, setSearchTerm }) => {
   return (
     <div className="header">
       <IconButton onClick={handleBackClick} className="icon-button">
-        <ArrowBackIcon />
+        <ArrowBackIcon className="arrow-icon" />
       </IconButton>
       <p className="title">{title ?? ""}</p>
       <div className="search-container">
         {!isSearchOpen ? (
           <IconButton className="icon-button" onClick={handleSearchClick}>
-            <SearchIcon />
+            <SearchIcon className="search-icon" />
           </IconButton>
         ) : (
           <InputBase

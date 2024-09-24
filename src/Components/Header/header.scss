@@ -2,9 +2,9 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  background-color: rgba(23, 23, 23, 0.99);
+  background-color: rgba(23, 23, 23, 1);
 
-  box-shadow: rgba(22, 22, 22, 1) 0px 25px 28px -1px;
+  box-shadow: rgba(22, 22, 22, 1) 0px 25px 18px -1px;
   color: #fff;
   position: sticky;
   top: 0;
@@ -15,11 +15,11 @@
 .title {
   flex-grow: 1;
   margin: 0 10px;
-  font-size: 1.8rem;
+  font-size: 22px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: rgba(255, 255, 255, 0.56);
+  color: rgba(255, 255, 255, 1);
 }
 
 .search-container {
@@ -37,7 +37,12 @@
   flex-grow: 1;
   max-width: 200px;
 }
-
+.search-icon {
+  font-size: 30px;
+}
+.arrow-icon {
+  font-size: 20px;
+}
 .icon-button {
   svg {
     fill: #fff;
